@@ -1,0 +1,8 @@
+
+- name: Install certbot
+  apt:
+    name: certbot
+    state: present
+
+- name: Obtain SSL
+  shell: certbot certonly --standalone -d {{ domain }} --non-interactive --agree-tos -m admin@test.com

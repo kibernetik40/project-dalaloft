@@ -1,0 +1,15 @@
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - cd /var/www/project/releases/current/docker
+    - git pull
+    - docker-compose up -d
+    - docker exec $(docker ps -qf "name=php") php artisan migrate --force
+  only:
+    - main
+  tags:
+    - production

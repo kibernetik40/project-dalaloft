@@ -1,0 +1,5 @@
+
+domain: your-domain.com
+project_path: /var/www/project
+git_repo: https://gitlab.com/your/project.git
+deploy_user: deploy
